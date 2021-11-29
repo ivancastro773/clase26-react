@@ -4,15 +4,23 @@ import {Routes, Route, Link} from "react-router-dom";
 import Home from './components/home';
 import About from './components/about';
 import Contact from './components/contact';
+import './components/main';
+import './components/style.css';
 
 function App() {
   return (
     <section>
-    <div>
-      <li><Link to="/home">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/contact">Contact</Link></li>
-    </div>
+      <nav>
+        <ul class="menu">
+          <li class="logo">NAV BAR</li>
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li class="toggle">
+            <a href="#" onclick="changeIcon()"><i id="pr" class="fas fa-bars "></i></a>
+          </li>
+        </ul>
+    </nav>
     <Routes>
       <Route index path="/home" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
